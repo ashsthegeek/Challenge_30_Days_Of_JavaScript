@@ -63,13 +63,13 @@ let numbers1 = [1, 2, 3]
 let numbers2 = [1, 2, 3]
 console.log(numbers1 == numbers2) // False
 
-let userOne = {
+let utilisateur1 = {
     name:'Asabeneh',
     role:'teaching',
     country:'Finland'
     }
     
-    let userTwo = {
+    let utilisateur2 = {
     name:'Asabeneh',
     role:'teaching',
     country:'Finland'
@@ -86,10 +86,10 @@ console.log(userOne == userTwo) // false
     au même objet sous-jacent
 */
 
-let nums = [1, 2, 3]
-let numbers = nums
+let nombres = [1, 2, 3]
+let nombresCopie = nombres
 
-console.log(nums == numbers)  // true
+console.log(nombresCopie == nombres)  // true
 
 let userOne = {
 name:'Asabeneh',

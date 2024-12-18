@@ -105,3 +105,134 @@ console.log('Competences :', etudiant[4].Comptetences);
 etudiant[4].Comptetences.forEach(competence => {
     console.log(competence);
 })
+
+// Créer un tableau à l'aide de split
+/*
+    Comme nous l'avons vu dans la section précédente, il est possible de diviser une chaîne de caractères à différentes positions, ce qui permet de la transformer en tableau. Examinons les exemples ci-dessous.
+*/
+
+//EXEMPLES
+
+let js = 'JavaScript'
+const caracteresDansJavaScript = js.split('')
+
+console.log(caracteresDansJavaScript) // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+let entreprisesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
+const entreprises = entreprisesString.split(',')
+
+console.log(entreprises) // ["Facebook", " Google", " Microsoft", " Apple", " IBM", " Oracle", " Amazon"]
+
+let texte =
+  'J’aime enseigner et donner du pouvoir aux gens. J’enseigne HTML, CSS, JS, React, Python.'
+const mots = texte.split(' ')
+
+console.log(mots)
+// le texte contient des caractères spéciaux, réfléchissez à comment obtenir uniquement les mots
+// ["J’aime", "enseigner", "et", "donner", "du", "pouvoir", "aux", "gens.", "J’enseigne", "HTML,", "CSS,", "JS,", "React,", "Python."]
+
+
+// Accéder aux éléments d'un tableau à l'aide de leur index
+
+/*
+Nous accédons à chaque élément d'un tableau en utilisant son index. L'index d'un tableau commence à 0. L'image ci-dessous illustre clairement l'index de chaque élément dans le tableau.
+*/
+
+// EXEMPLE 
+
+const telephones = ['Nokia', 'Tecno', 'Apple', 'Samsung'];
+
+// Affichage des éléments du tableau en commençant par l'index 0
+let premierTelephone = telephones[0];
+console.log(premierTelephone); // Nokia
+
+let deuxiemeTelephone = telephones[1];
+console.log(deuxiemeTelephone); // Tecno
+
+let dernierTelephone = telephones[3];
+console.log(dernierTelephone); // Samsung
+
+// Alternative : accéder au dernier élément du tableau dynamiquement
+// Calcul de l'index du dernier élément : telephones.length - 1
+let dernierIndex = telephones.length - 1;
+dernierTelephone = telephones[dernierIndex];
+console.log(telephones[dernierIndex]); // Samsung
+
+
+// Modification d'un élément de tableau
+/*
+    Un tableau est mutable (modifiable). Une fois qu'un tableau est créé, nous pouvons modifier le contenu de ses éléments.
+*/
+
+//EXEMPLE 1
+const chiffres = [1, 2, 3, 4]
+chiffres[0] = 20 // Change le 1 en 20
+chiffres[2] = 30 // Change le 3 en 30
+
+console.log(chiffres) // [20, 2, 30, 4]
+
+// EXEMPLE 2
+
+const mesAchats = ['Banana', 'Pomme', 'Légumes', 'Poisson']
+console.log("Le tableau initial : ", mesAchats) // ['Banana', 'Pomme', 'Légumes', 'Poisson']
+
+mesAchats[1] = 'Poivron'  // Change Pomme en Poivron
+mesAchats[mesAchats.length - 1] = 'Crevettes' // Change Poisson en Crevettes
+
+console.log("Le tableau modifié : ", mesAchats) // [Banana, Poivron, Légumes, Crevettes]
+
+
+/*
+    Constructeur de Tableau
+    Array : Pour créer un tableau.
+*/
+
+const monTableau = Array(); 
+// Crée un tableau vide
+console.log(monTableau); // []
+
+const monTableau2 = Array(8); 
+// Crée un tableau avec 8 emplacements vides (slots non initialisés)
+console.log(monTableau2); // [ <8 empty items> ]
+
+
+/*
+    Créer des valeurs statiques avec fill
+    fill : Remplit tous les éléments d'un tableau avec une valeur statique.
+*/
+
+const huitValeur = Array(8).fill('Y')
+console.log(huitValeur) // ['Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y']
+
+const cinqZeros = Array(5).fill(0);
+// Crée un tableau de 5 zéros : [0, 0, 0, 0, 0]
+
+console.log(cinqZeros);
+
+
+/*
+    Concaténer des tableaux avec concat
+    concat : Permet de concaténer (fusionner) deux tableaux.
+*/
+
+//EXEMPLE
+const listeUn = [1, 2, 3]
+const listeDeux = [4, 5, 6]
+const listeTrois = listeUn.concat(listeDeux)
+
+console.log(listeTrois)
+// [1, 2, 3, 4, 5, 6]
+
+// Vérification si un élément existe dans le tableau
+const listeElements = ['Banana', 'Mango', 'Orange', 'Pomme'];
+let index = listeElements.indexOf('Banana');  // Recherche l'index de 'Banana'
+
+if (index === -1) {
+    console.log("Cet élément n'existe pas dans le tableau");
+} else {
+    console.log("L'élément existe dans le tableau");
+}
+
+// Retourne : "L'élément existe dans le tableau"
+
+

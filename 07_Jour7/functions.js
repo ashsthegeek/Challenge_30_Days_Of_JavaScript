@@ -137,7 +137,32 @@ function sommeNombre(nombre1, nombre2) {
 }
 sommeNombre(10, 20) // 30
 
+// Fonctions avec plusieurs paramétres
 
+// SYNTAXE :
+/*
+function nomDeLaFonction(parm1, parm2, parm3, ...) {
+    // le code s'écrit ici
+}
+  nomDeLaFonction(parm1, parm2, parm3, ...)
+
+        lors de l'appel ou de l'invocation, trois arguments sont nécessaires
+*/
+
+// EXEMPLE 
+
+// cette fonction prend un tableau comme paramètre et additionne les nombres dans le tableau
+function sommeValeursTableau(arr) {
+    let somme = 0;
+    for (let i = 0; i < arr.length; i++) {
+      somme = somme + arr[i];
+    }
+    return somme;
+}
+const nombres = [1, 2, 3, 4, 5];
+
+// appel de la fonction
+console.log(sommeValeursTableau(nombres));
 
 
 

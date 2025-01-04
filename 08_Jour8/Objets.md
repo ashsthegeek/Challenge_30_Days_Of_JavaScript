@@ -1,4 +1,4 @@
-### Jour 8 : Les Objets (Objectd) en JavaScript
+### Jour 8 : Les Objets (Objects) en JavaScript
 
 ### Portée (Scoop)
 
@@ -131,3 +131,167 @@ console.log(i); // 3 (i est accessible même en dehors de la boucle car var n'a 
 var crée une variable de portée de fonction ou globale. Elle n'est pas limitée au bloc.
 let ou const créent des variables limitées à leur bloc de déclaration (if, boucle, fonction, etc.).
 Utilisez préférablement let ou const pour éviter les effets inattendus et améliorer la lisibilité du code.
+
+### Les Objets
+Tout peut être un objet et les objets ont des propriétés et les propriétés ont des valeurs, donc un objet est une paire clé-valeur. L'ordre de la clé n'est pas réservé, ou il n'y a pas d'ordre.
+Pour créer un littéral d'objet, nous utilisons deux accolades.
+
+### Création d'un objet vide
+
+```js
+  const personnene = {}
+```
+
+### Création d'objet avec des valeurs 
+
+Maintenant, l'objet personnene possède les propriétés firstName, lastName, age, location, skills et isMarried. La valeur des propriétés ou des clés peut être une chaîne, un nombre, un booléen, un objet, null, undefined ou une fonction.
+
+Voyons quelques exemples d'objet. Chaque clé a une valeur dans l'objet.
+
+```js
+  const rectangle = {
+    longeur: 20,
+    largeur: 20
+  }
+  console.log(rectangle) // {longeur: 20, largeur: 20}
+```
+
+```js
+const rectangle = {
+  length: 20,
+  width: 20
+}
+console.log(rectangle) // {length: 20, width: 20}
+
+const personnene = {
+  firstName: 'Birama',
+  lastName: 'DIOP',
+  age: 25,
+  country: 'Sénégal',
+  city: 'Dakar',
+  skills: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Node',
+    'MongoDB',
+    'Python',
+    'D3.js'
+  ],
+  isMarried: false
+}
+console.log(personnene)
+```
+
+### Obtenir des valeurs à partir d'un objet
+
+Nous pouvons accéder aux valeurs d'un objet à l'aide de deux méthodes:
+
+- en utilisant . suivi du nom de la clé si le nom de la clé est un seul mot
+- en utilisant des crochets et une citation
+
+```js
+const personne = {
+  firstName: 'Birama',
+  lastName: 'DIOP',
+  age: 25,
+  country: 'Sénégal',
+  city: 'Dakar',
+  skills: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Node',
+    'MongoDB',
+    'Python',
+    'D3.js'
+  ],
+  getFullName: function() {
+    return `${this.firstName}${this.lastName}`
+  },
+  'phone number': '+221777773322'
+}
+
+// accéder aux valeurs en utilisant .
+console.log(personne.firstName)
+console.log(personne.lastName)
+console.log(personne.age)
+console.log(personne.location) // undefined
+
+// la valeur est accessible à l'aide de crochets et du nom de la clé
+console.log(personne['firstName'])
+console.log(personne['lastName'])
+console.log(personne['age'])
+console.log(personne['age'])
+console.log(personne['location']) // undefined
+
+// par exemple pour accéder au numéro de téléphone nous utilisons uniquement la méthode des crochets
+console.log(personne['phone number'])
+```
+
+### Création de méthodes d'objet
+
+Maintenant, l'objet personne possède des propriétés getFullName. La fonction getFullName est à l'intérieur de l'objet personne et nous l'appelons une méthode objet. Le mot clé _this_ fait référence à l'objet lui-même. Nous pouvons utiliser le mot _this_ pour accéder aux valeurs de différentes propriétés de l'objet. Nous ne pouvons pas utiliser une fonction fléchée comme méthode objet car le mot this fait référence à la fenêtre à l'intérieur d'une fonction fléchée au lieu de l'objet lui-même. Exemple d'objet :
+
+```js
+const personne = {
+  firstName: 'Birama',
+  lastName: 'DIOP',
+  age: 25,
+  country: 'Sénégal',
+  city: 'Dakar',
+  skills: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Node',
+    'MongoDB',
+    'Python',
+    'D3.js'
+  ],
+  getFullName: function() {
+    return `${this.firstName}${this.lastName}`
+  },
+}
+
+console.log(person.getFullName())
+// Birama DIOP
+```
+### Définition d'une nouvelle clé pour un objet
+
+Un objet est une structure de données modifiable et nous pouvons modifier le contenu d'un objet après sa création.
+
+Définition d'une nouvelle clé dans un objet
+
+```js
+const personne = {
+  firstName: 'Birama',
+  lastName: 'DIOP',
+  age: 25,
+  country: 'Sénégal',
+  city: 'Dakar',
+  skills: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Node',
+    'MongoDB',
+    'Python',
+    'D3.js'
+  ],
+  getFullName: function() {
+    return `${this.firstName}${this.lastName}`
+  },
+}
+
+personne.nationality = 'Marocain'
+personne.country = 'Maroc'
+personne.title = 'Professeur'
+personne.skills.push('Php')
+personne.skills.push('Angular')
+personne.isMarried = true
+```

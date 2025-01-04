@@ -1,5 +1,5 @@
 /*
-    Jusqu'à présent, nous avons vu de nombreuses fonctions intégrées en JavaScript. Dans cette section, nous allons nous concentrer sur les fonctions personnalisées. Qu'est-ce qu'une fonction ? Avant de commencer à créer des fonctions, comprenons ce qu'est une fonction et pourquoi nous en avons besoin.
+    Jusqu'à présent, nous avons vu de nombreuses fonctions intégrées en JavaScript. Dans cette section, nous allons nous concentrer sur les fonctions personnenalisées. Qu'est-ce qu'une fonction ? Avant de commencer à créer des fonctions, comprenons ce qu'est une fonction et pourquoi nous en avons besoin.
 
     Une fonction est un bloc de code ou d'instructions programmées réutilisable, conçu pour effectuer une tâche précise.
     Une fonction est déclarée avec le mot-clé function, suivi d'un nom, puis de parenthèses (). Les parenthèses peuvent prendre un paramètre. Si une fonction prend un paramètre, elle sera appelée avec un argument. Une fonction peut également prendre un paramètre par défaut. Pour stocker des données dans une fonction, celle-ci doit renvoyer un certain type de données. Pour obtenir la valeur, nous appelons ou invoquons la fonction.

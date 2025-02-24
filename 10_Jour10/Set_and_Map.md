@@ -82,3 +82,109 @@ for (const company of companies) {
 console.log(setOfCompanies)
 // Retourne : Set(5) {"Google", "Facebook", "Amazon", "Oracle", "Microsoft"}
 ```
+
+### Suppression d'un élément d'un ensemble
+
+Nous pouvons supprimer un élément d'un ensemble en utilisant la méthode delete.
+
+```js
+console.log(companies.delete('Google'))
+console.log(companies.size) // 4 éléments restants dans l'ensemble
+```
+
+### Vérification d'un élément dans l'ensemble
+
+La méthode has permet de savoir si un certain élément existe dans un ensemble.
+
+```js
+console.log(companies.has('Apple')) // false
+console.log(companies.has('Facebook')) // true
+```
+
+### Vidage de l'ensemble
+
+Cette opération supprime tous les éléments d'un ensemble
+
+```js
+companies.clear()
+console.log(companies)
+
+// Set(0) {}
+```
+
+### Voir l'exemple ci-dessous pour apprendre à utiliser Set
+
+```js
+const languages = [
+  'English',
+  'Finnish',
+  'English',
+  'French',
+  'Spanish',
+  'English',
+  'French',
+]
+const langSet = new Set(languages)
+console.log(langSet) // Set(4) {"English", "Finnish", "French", "Spanish"}
+console.log(langSet.size) // 4
+
+const counts = []
+const count = {}
+
+for (const l of langSet) {
+  const filteredLang = languages.filter((lng) => lng === l)
+  console.log(filteredLang) // ["English", "English", "English"]
+  counts.push({ lang: l, count: filteredLang.length })
+}
+console.log(counts)
+```
+
+
+## Création d'une Map à partir d'un tableau
+
+```js
+countries = [
+  ['Finlande', 'Helsinki'],
+  ['Suède', 'Stockholm'],
+  ['Norvège', 'Oslo'],
+]
+const map = new Map(countries)
+console.log(map)
+console.log(map.size)
+
+// Resultat : Map(3) {"Finlande" => "Helsinki", "Suède" => "Stockholm", "Norvège" => "Oslo"}
+
+```
+
+### Ajout de valeurs à la Map
+
+```js
+const countriesMap = new Map() // Création d'un map vide
+console.log(countriesMap.size) // 0
+
+// Ajout de valeurs avec set
+countriesMap.set('Finlande', 'Helsinki')
+countriesMap.set('Suède', 'Stockholm')
+countriesMap.set('Norvège', 'Oslo')
+
+// Affichage de résultats
+console.log(countriesMap) 
+// Map(3) {"Finlande" => "Helsinki", "Suède" => "Stockholm", "Norvège" => "Oslo"}
+console.log(countriesMap.size) // 3
+```
+
+### Obtenir une valeur depuis une Map
+
+```js
+console.log(countriesMap.get('Finlande'))
+// Retourne : Helsinki
+```
+
+### Vérifier la présence d'une clé dans une Map
+
+On peut vérifier si une clé existe dans une Map en utilisant la méthode _has_. Elle retourne true ou false
+
+```js
+console.log(countriesMap.has('Finlande'))
+// Retourne : True car Finlande existe dans map
+```

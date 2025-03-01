@@ -188,3 +188,34 @@ On peut vérifier si une clé existe dans une Map en utilisant la méthode _has_
 console.log(countriesMap.has('Finlande'))
 // Retourne : True car Finlande existe dans map
 ```
+
+### Obtenir toutes les valeurs d'une Map en utilisant une boucle
+
+```js
+for (const country of countriesMap) {
+  console.log(country)
+}
+
+// Resultat : 
+/*
+  (2) ["Finlande", "Helsinki"]
+  (2) ["Suède", "Stockholm"]
+  (2) ["Norvège", "Oslo"]
+*/
+```
+
+```js
+for (const [country, city] of countriesMap) {
+  console.log(country, city)
+}
+
+/*
+RETOURNE : 
+
+  Finlande Helsinki
+  Suède Stockholm
+  Norvège Oslo
+*/
+```
+
+### FIN
